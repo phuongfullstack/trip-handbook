@@ -1025,6 +1025,10 @@ Vấn đề cần hỗ trợ:</pre>
                   <input type="text" sc-camel-input-mode="numeric" sc-camel-auto-complete="off" placeholder="0" value="{{ calcChild }}" sc-camel-on-input="{{ onChild }}" style="border:1px solid #D9DCE6;border-radius:10px;padding:12px;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;color:#2C2F3A;min-height:44px">
                 </label>
                 <label style="display:flex;flex-direction:column;gap:6px">
+                  <span style="font-size:12.5px;font-weight:600;color:#2A2D5C">Cao tuổi (có giấy tờ)</span>
+                  <input type="text" sc-camel-input-mode="numeric" sc-camel-auto-complete="off" placeholder="0" value="{{ calcSenior }}" sc-camel-on-input="{{ onSenior }}" style="border:1px solid #D9DCE6;border-radius:10px;padding:12px;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;color:#2C2F3A;min-height:44px">
+                </label>
+                <label style="display:flex;flex-direction:column;gap:6px">
                   <span style="font-size:12.5px;font-weight:600;color:#2A2D5C">Tiền phòng cả kỳ (đ)</span>
                   <input type="text" sc-camel-input-mode="numeric" sc-camel-auto-complete="off" placeholder="0" value="{{ calcRoom }}" sc-camel-on-input="{{ onRoom }}" style="border:1px solid #D9DCE6;border-radius:10px;padding:12px;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;color:#2C2F3A;min-height:44px">
                 </label>
@@ -1055,6 +1059,34 @@ Vấn đề cần hỗ trợ:</pre>
                 </div>
               </div>
               <button sc-camel-on-click="{{ copyQuote }}" style="margin-top:16px;border:1px solid #4FB3A6;background:{{ quoteBtn.bg }};color:{{ quoteBtn.fg }};border-radius:10px;padding:12px 18px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;min-height:44px">{{ quoteBtn.label }}</button>
+
+              <sc-if value="{{ ppReady }}" hint-placeholder-val="{{ false }}">
+                <div style="margin-top:18px;background:#F4FBF9;border:1px solid #D4EFE8;border-radius:12px;padding:16px">
+                  <div style="font-family:Outfit,sans-serif;font-size:14px;font-weight:600;color:#1E6B5E">Giá chia đầu người <span style="font-weight:400;color:#3D6A62;font-size:12.5px">— tiền phòng ÷ {{ nGuestsF }} khách, cộng vé theo đối tượng</span></div>
+                  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+                    <div style="background:#fff;border:1px solid #D4EFE8;border-radius:10px;padding:10px 14px;flex:1 1 140px"><div style="font-size:11.5px;color:#3D6A62">Phòng / khách (cả kỳ)</div><div style="font-family:Outfit,sans-serif;font-size:17px;font-weight:700;color:#1E6B5E;margin-top:2px">{{ roomPPF }}</div></div>
+                    <div style="background:#fff;border:1px solid #D4EFE8;border-radius:10px;padding:10px 14px;flex:1 1 140px"><div style="font-size:11.5px;color:#3D6A62">Người lớn / khách</div><div style="font-family:Outfit,sans-serif;font-size:17px;font-weight:700;color:#1E6B5E;margin-top:2px">{{ adultPPF }}</div></div>
+                    <div style="background:#fff;border:1px solid #D4EFE8;border-radius:10px;padding:10px 14px;flex:1 1 140px"><div style="font-size:11.5px;color:#3D6A62">Trẻ em / khách</div><div style="font-family:Outfit,sans-serif;font-size:17px;font-weight:700;color:#1E6B5E;margin-top:2px">{{ childPPF }}</div></div>
+                    <sc-if value="{{ showSeniorPP }}" hint-placeholder-val="{{ false }}">
+                      <div style="background:#fff;border:1px solid #D4EFE8;border-radius:10px;padding:10px 14px;flex:1 1 140px"><div style="font-size:11.5px;color:#3D6A62">Cao tuổi / khách</div><div style="font-family:Outfit,sans-serif;font-size:17px;font-weight:700;color:#1E6B5E;margin-top:2px">{{ seniorPPF }}</div></div>
+                    </sc-if>
+                  </div>
+                </div>
+              </sc-if>
+
+              <div style="margin-top:18px;background:#fff;border:1px solid #E6E8EF;border-radius:12px;padding:16px">
+                <div style="font-family:Outfit,sans-serif;font-size:14px;font-weight:600;color:#2A2D5C">Văn mẫu 1 — gửi báo giá tổng</div>
+                <div style="margin-top:8px;white-space:pre-line;font-size:13px;color:#3A3E4C;line-height:1.65;background:#F5F6FA;border-radius:10px;padding:12px 14px">{{ msgTongText }}</div>
+                <button sc-camel-on-click="{{ copyMsgTong }}" style="margin-top:10px;border:1px solid {{ msgTongBtn.bd }};background:{{ msgTongBtn.bg }};color:{{ msgTongBtn.fg }};border-radius:10px;padding:11px 16px;font-family:Outfit,sans-serif;font-size:13.5px;font-weight:500;cursor:pointer;min-height:42px}">{{ msgTongBtn.label }}</button>
+              </div>
+
+              <sc-if value="{{ ppReady }}" hint-placeholder-val="{{ false }}">
+                <div style="margin-top:12px;background:#fff;border:1px solid #E6E8EF;border-radius:12px;padding:16px">
+                  <div style="font-family:Outfit,sans-serif;font-size:14px;font-weight:600;color:#2A2D5C">Văn mẫu 2 — giải thích giá chia đầu người</div>
+                  <div style="margin-top:8px;white-space:pre-line;font-size:13px;color:#3A3E4C;line-height:1.65;background:#F5F6FA;border-radius:10px;padding:12px 14px">{{ msgPPText }}</div>
+                  <button sc-camel-on-click="{{ copyMsgPP }}" style="margin-top:10px;border:1px solid {{ msgPPBtn.bd }};background:{{ msgPPBtn.bg }};color:{{ msgPPBtn.fg }};border-radius:10px;padding:11px 16px;font-family:Outfit,sans-serif;font-size:13.5px;font-weight:500;cursor:pointer;min-height:42px}">{{ msgPPBtn.label }}</button>
+                </div>
+              </sc-if>
               <div style="margin-top:16px;padding:14px 16px;background:#FFF6F3;border:1px solid #F6D9CF;border-radius:12px;font-size:13.5px;color:#B4441F;line-height:1.6">Con số ở đây chỉ để tính nhanh theo giá niêm yết. Phải kiểm tra tình trạng chỗ, phụ thu cuối tuần/lễ/Tết và điều kiện áp dụng trước khi báo khách.</div>
             </section>
           </sc-if>
@@ -1485,7 +1517,7 @@ class Component extends DCLogic {
     comboIdx: 0, copied: '',
     answers: {}, done: {},
     scripts: [], cats: [], tickets: [], combos: [],
-    calc: { ticket: -1, adult: '2', child: '0', room: '', other: '' }
+    calc: { ticket: -1, adult: '2', child: '0', senior: '0', room: '', other: '' }
   };
 
   componentDidMount() {
@@ -1672,14 +1704,27 @@ class Component extends DCLogic {
     const t = (c.ticket >= 0 && flatTickets[c.ticket]) ? flatTickets[c.ticket] : null;
     const nAdult = num(c.adult);
     const nChild = num(c.child);
+    const nSenior = num(c.senior);
     const hasChildRate = !!(t && t.child !== null && t.child !== undefined && t.child !== '' && !isNaN(+t.child));
     const childRate = t ? (hasChildRate ? +t.child : (+t.adult || 0)) : 0;
-    const ticketTotal = t ? nAdult * (+t.adult || 0) + nChild * childRate : 0;
+    const seniorRate = t ? ((t.senior !== null && t.senior !== undefined && t.senior !== '' && !isNaN(+t.senior)) ? +t.senior : (+t.adult || 0)) : 0;
+    const ticketTotal = t ? nAdult * (+t.adult || 0) + nChild * childRate + nSenior * seniorRate : 0;
     const roomAmt = num(c.room);
     const otherAmt = num(c.other);
     const total = ticketTotal + roomAmt + otherAmt;
     const dep = Math.round(total * 0.3 / 1000) * 1000;
     const remain = total - dep;
+    const nGuests = nAdult + nChild + nSenior;
+    const roomPP = (nGuests > 0 && roomAmt > 0) ? Math.round(roomAmt / nGuests) : 0;
+    const adultPP = roomPP + (t ? (+t.adult || 0) : 0);
+    const childPP = roomPP + childRate;
+    const seniorPP = roomPP + seniorRate;
+    const guestsParts = [];
+    if (nAdult > 0) guestsParts.push(nAdult + ' người lớn');
+    if (nChild > 0) guestsParts.push(nChild + ' trẻ em');
+    if (nSenior > 0) guestsParts.push(nSenior + ' người cao tuổi');
+    const guestsLabel = guestsParts.length ? guestsParts.join(' + ') : '0 khách';
+    const svcLabel = t ? t.name.replace(/\n/g, ' ') : 'phòng và dịch vụ theo phương án đã trao đổi';
     const setTicket = (e) => {
       const v = parseInt(e.target.value, 10);
       this.setState({ calc: Object.assign({}, this.state.calc, { ticket: isNaN(v) ? -1 : v }) });
@@ -1694,6 +1739,7 @@ class Component extends DCLogic {
       const parts = [];
       if (nAdult > 0) parts.push(nAdult + ' người lớn x ' + this.money(t.adult));
       if (nChild > 0) parts.push(nChild + ' trẻ em x ' + this.money(childRate));
+      if (nSenior > 0) parts.push(nSenior + ' cao tuổi x ' + this.money(seniorRate));
       quoteLines.push('  ' + (parts.length ? parts.join(' + ') + ' = ' : '') + this.money(ticketTotal));
     }
     if (roomAmt > 0) quoteLines.push('- Phòng: ' + this.money(roomAmt));
@@ -1702,6 +1748,21 @@ class Component extends DCLogic {
     quoteLines.push('Cọc 30%: ' + this.money(dep));
     quoteLines.push('Còn lại: ' + this.money(remain));
     const quoteText = quoteLines.join('\n');
+    const msgTongText = 'Dạ em gửi anh/chị phương án và giá tham khảo ạ:\n• Dịch vụ: ' + svcLabel + '\n• Số khách: ' + guestsLabel + '\n• Tổng booking: ' + this.money(total) + '\n• Cọc 30%: ' + this.money(dep) + ' — chuyển trước để giữ chỗ và giữ giá\n• Còn lại: ' + this.money(remain) + ' thanh toán tại quầy khi nhận phòng\nGiá hiệu lực trong hôm nay và có thể thay đổi theo tình trạng chỗ. Anh/chị xem phương án và phản hồi giúp em nhé ạ.';
+    const ppLines = [];
+    if (nGuests > 0 && roomAmt > 0) {
+      ppLines.push('Dạ tiền phòng em chia đều theo đầu người, cộng thêm giá vé/tour theo từng đối tượng ạ:');
+      ppLines.push('• Tiền phòng: ' + this.money(roomAmt) + ' ÷ ' + nGuests + ' khách = ' + this.money(roomPP) + '/khách (cả kỳ lưu trú)');
+      if (nAdult > 0) ppLines.push('• Giá người lớn: ' + this.money(adultPP) + '/khách' + (t ? ' (phòng ' + this.money(roomPP) + ' + vé ' + this.money(+t.adult || 0) + ')' : ''));
+      if (nChild > 0) ppLines.push('• Giá trẻ em: ' + this.money(childPP) + '/khách' + (t ? ' (phòng ' + this.money(roomPP) + ' + vé ' + this.money(childRate) + ')' : ''));
+      if (nSenior > 0) ppLines.push('• Giá cao tuổi: ' + this.money(seniorPP) + '/khách' + (t ? ' (phòng ' + this.money(roomPP) + ' + vé ' + this.money(seniorRate) + ')' : ''));
+      ppLines.push('• Tổng booking: ' + this.money(total) + ' — cọc 30% ' + this.money(dep) + ', còn lại ' + this.money(remain) + ' tại quầy.');
+      ppLines.push('Mỗi khách trả khác nhau vì vé tính theo đối tượng, phần phòng thì bằng nhau ạ. Anh/chị cần điều chỉnh gì báo em nhé.');
+    }
+    const msgPPText = ppLines.length ? ppLines.join('\n') : '';
+    const ppReady = nGuests > 0 && roomAmt > 0;
+    const mTong = this.copyBtn('msgtong', '⧉ Copy văn mẫu');
+    const mPP = this.copyBtn('msgpp', '⧉ Copy văn mẫu');
 
     const combos = st.combos;
     const combo = combos[st.comboIdx] || { desc: '', d1: '', d2: '', d3: '', inc: '', exc: '' };
@@ -1751,16 +1812,24 @@ class Component extends DCLogic {
       isSubTour: st.sub === 'tour', isSubCalc: st.sub === 'calc',
       ticketGroups, ticketOptions, comboChips, combo,
 
-      calcTicket: String(c.ticket), calcAdult: c.adult, calcChild: c.child,
+      calcTicket: String(c.ticket), calcAdult: c.adult, calcChild: c.child, calcSenior: c.senior,
       calcRoom: grp(c.room), calcOther: grp(c.other),
-      onTicket: setTicket, onAdult: setField('adult', 3), onChild: setField('child', 3),
+      onTicket: setTicket, onAdult: setField('adult', 3), onChild: setField('child', 3), onSenior: setField('senior', 3),
+      copyQuote: () => this.copy(quoteText, 'quote'), quoteBtn: this.copyBtn('quote', 'Copy báo giá'),
+      roomPPF: this.money(roomPP), adultPPF: this.money(adultPP), childPPF: this.money(childPP), seniorPPF: this.money(seniorPP),
+      nGuestsF: nGuests, ppReady, showSeniorPP: nSenior > 0 && ppReady,
+      msgTongText, msgPPText,
+      copyMsgTong: () => this.copy(msgTongText, 'msgtong'), msgTongBtn: mTong,
+      copyMsgPP: () => this.copy(msgPPText, 'msgpp'), msgPPBtn: mPP,
       onRoom: setField('room', 11), onOther: setField('other', 11),
       calcTicketTotal: this.money(ticketTotal), calcTotal: this.money(total),
       calcDeposit: this.money(dep), calcRemain: this.money(remain),
       childRateNote: !t ? 'Chọn loại vé để tính tiền vé.'
         : (hasChildRate ? 'Giá trẻ em của vé này: ' + this.money(t.child) + '. Trẻ dưới 1m miễn phí, không tính vào đây.'
           : 'Vé này không có giá trẻ em riêng — đang tính bằng giá người lớn.'),
-      copyQuote: () => this.copy(quoteText, 'quote'), quoteBtn: this.copyBtn('quote', 'Copy báo giá'),
+      calcTicket: String(c.ticket), calcAdult: c.adult, calcChild: c.child, calcSenior: c.senior,
+      calcRoom: grp(c.room), calcOther: grp(c.other),
+      onTicket: setTicket, onAdult: setField('adult', 3), onChild: setField('child', 3), onSenior: setField('senior', 3),
 
       copyRoom1: () => this.copy(ROOM_COPY[0], 'room0'), roomBtn1: this.copyBtn('room0', '⧉ Copy'),
       copyRoom2: () => this.copy(ROOM_COPY[1], 'room1'), roomBtn2: this.copyBtn('room1', '⧉ Copy'),
