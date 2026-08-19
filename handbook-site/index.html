@@ -227,16 +227,18 @@ window.__resources = {"scriptsJson":"data:application/json;base64,eyJjYXRlZ29yaW
     </div>
 
     <div class="navtabs" style="position:sticky;top:0;z-index:60;background:#2A2D5C;box-shadow:0 10px 26px rgba(21,23,56,.45);max-width:1280px;margin:0 auto;display:flex;gap:3px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#5A5F92 transparent">
-      <button sc-camel-on-click="{{ goHome }}" style="background:{{ tabHome.bg }};color:{{ tabHome.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">Tổng quan</button>
-      <button sc-camel-on-click="{{ goLotrinh }}" style="background:{{ tabLotrinh.bg }};color:{{ tabLotrinh.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">Lộ trình 7 ngày</button>
-      <button sc-camel-on-click="{{ goQuytrinh }}" style="background:{{ tabQuytrinh.bg }};color:{{ tabQuytrinh.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">Quy trình</button>
-      <button sc-camel-on-click="{{ goLead }}" style="background:{{ tabLead.bg }};color:{{ tabLead.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">Trạng thái lead</button>
-      <button sc-camel-on-click="{{ goBooking }}" style="background:{{ tabBooking.bg }};color:{{ tabBooking.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">Chốt booking</button>
-      <button sc-camel-on-click="{{ goCare }}" style="background:{{ tabCare.bg }};color:{{ tabCare.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">Chăm sóc</button>
-      <button sc-camel-on-click="{{ goScript }}" style="background:{{ tabScript.bg }};color:{{ tabScript.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">Script</button>
-      <button sc-camel-on-click="{{ goGia }}" style="background:{{ tabGia.bg }};color:{{ tabGia.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">Bảng giá</button>
-            <button sc-camel-on-click="{{ goCamnang }}" style="background:{{ tabCamnang.bg }};color:{{ tabCamnang.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">Cẩm nang</button>
-      <button sc-camel-on-click="{{ goKpi }}" style="background:{{ tabKpi.bg }};color:{{ tabKpi.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">Checklist</button>
+      <button class="navbtn" title="Phím 1 — Tổng quan" sc-camel-on-click="{{ goHome }}" style="background:{{ tabHome.bg }};color:{{ tabHome.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">🏠 Tổng quan</button>
+      <button class="navbtn" title="Phím 2 — Lộ trình 7 ngày" sc-camel-on-click="{{ goLotrinh }}" style="background:{{ tabLotrinh.bg }};color:{{ tabLotrinh.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">🧭 Lộ trình 7 ngày</button>
+      <span class="navsep" aria-hidden="true"></span>
+      <button class="navbtn" title="Phím 3 — Quy trình" sc-camel-on-click="{{ goQuytrinh }}" style="background:{{ tabQuytrinh.bg }};color:{{ tabQuytrinh.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">🔄 Quy trình</button>
+      <button class="navbtn" title="Phím 4 — Trạng thái lead" sc-camel-on-click="{{ goLead }}" style="background:{{ tabLead.bg }};color:{{ tabLead.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">📌 Trạng thái lead</button>
+      <button class="navbtn" title="Phím 5 — Chốt booking" sc-camel-on-click="{{ goBooking }}" style="background:{{ tabBooking.bg }};color:{{ tabBooking.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">💳 Chốt booking</button>
+      <button class="navbtn" title="Phím 6 — Chăm sóc" sc-camel-on-click="{{ goCare }}" style="background:{{ tabCare.bg }};color:{{ tabCare.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">💬 Chăm sóc</button>
+      <span class="navsep" aria-hidden="true"></span>
+      <button class="navbtn" title="Phím 7 — Script" sc-camel-on-click="{{ goScript }}" style="background:{{ tabScript.bg }};color:{{ tabScript.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">📝 Script</button>
+      <button class="navbtn" title="Phím 8 — Bảng giá" sc-camel-on-click="{{ goGia }}" style="background:{{ tabGia.bg }};color:{{ tabGia.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">💰 Bảng giá</button>
+            <button class="navbtn" title="Phím 9 — Cẩm nang" sc-camel-on-click="{{ goCamnang }}" style="background:{{ tabCamnang.bg }};color:{{ tabCamnang.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">📖 Cẩm nang</button>
+      <button class="navbtn" title="Phím 0 — Checklist" sc-camel-on-click="{{ goKpi }}" style="background:{{ tabKpi.bg }};color:{{ tabKpi.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">✅ Checklist</button>
     </div>
   </header>
 
@@ -1452,6 +1454,11 @@ Vấn đề cần hỗ trợ:</pre>
 
 <style>
 .rules-ol li::marker{color:#4FB3A6;font-weight:700}
+.navbtn{transition:background .15s,color .15s}
+.navbtn:hover{background:rgba(255,255,255,.14) !important}
+.navbtn[style*="color:#2A2D5C"]{font-weight:600}
+.navsep{flex:0 0 auto;align-self:center;width:1px;height:22px;background:rgba(255,255,255,.22);margin:0 3px}
+@media(max-width:640px){.navbtn{padding:9px 10px !important;font-size:13px !important}.navsep{margin:0 1px}}
 .navtabs::before,.navtabs::after{content:"";position:absolute;top:0;bottom:0;width:16px;z-index:3;pointer-events:none;opacity:0;transition:opacity .25s}
 .navtabs::before{left:0;background:linear-gradient(90deg,#2A2D5C,rgba(42,45,92,0))}
 .navtabs::after{right:0;background:linear-gradient(270deg,#2A2D5C,rgba(42,45,92,0))}
@@ -1579,6 +1586,11 @@ class Component extends DCLogic {
           e.preventDefault();
           this.setState({ tab: 'script' });
           setTimeout(() => { const el = document.querySelector('input[placeholder^="Tìm theo"]'); if (el) el.focus(); }, 60);
+        }
+        if (/^[0-9]$/.test(e.key) && tag !== 'INPUT' && tag !== 'TEXTAREA' && tag !== 'SELECT') {
+          var navMap = ['home', 'lotrinh', 'quytrinh', 'lead', 'booking', 'care', 'script', 'gia', 'camnang', 'kpi'];
+          var navIdx = e.key === '0' ? 9 : (+e.key - 1);
+          if (navMap[navIdx]) { e.preventDefault(); this.setState({ tab: navMap[navIdx] }); }
         }
       });
     } catch (err) {}
