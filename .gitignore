@@ -1,0 +1,13 @@
+# File trích xuất tạm & dữ liệu nhạy cảm (chứa SĐT khách, chính sách lương trích xuất)
+.tools/
+
+# Tài liệu nguồn nhạy cảm — KHÔNG đưa lên GitHub (SĐT khách, quy chế lương, bảng giá gốc)
+ELYDAY INFO/
+Training Sale ELYDAY SKKYE.html
+
+# Node
+node_modules/
+
+# OS
+Thumbs.db
+.DS_Store
