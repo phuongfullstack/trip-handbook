@@ -249,24 +249,25 @@ window.__resources = {"scriptsJson":"data:application/json;base64,eyJjYXRlZ29yaW
       <!-- ══ TỔNG QUAN ══ -->
       <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
         <div style="display:flex;flex-direction:column;gap:20px">
+          <div style="background:#2A2D5C;border-radius:16px;padding:18px 20px"><div style="font-family:Outfit,sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#7FD8C9;margin-bottom:12px">Bắt đầu nhanh</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:10px"><button class="qa-btn" sc-camel-on-click="{{ quickScripts }}"><span class="qa-ico">🔎</span><span class="qa-txt"><b>Tìm script</b><small>152 mẫu — hoặc nhấn phím <kbd>/</kbd></small></span></button><button class="qa-btn" sc-camel-on-click="{{ quickGiaVe }}"><span class="qa-ico">🧾</span><span class="qa-txt"><b>Bảng giá vé</b><small>Sun World + Vin — phím <kbd>8</kbd></small></span></button><button class="qa-btn" sc-camel-on-click="{{ quickCalc }}"><span class="qa-ico">🧮</span><span class="qa-txt"><b>Tính báo giá</b><small>Kèm văn mẫu copy — phím <kbd>8</kbd></small></span></button></div></div>
           <section style="background:#fff;border:1px solid #E6E8EF;border-radius:16px;padding:clamp(18px,4.5vw,28px)">
             <div style="display:inline-block;padding:5px 11px;border-radius:999px;background:#EAF7F4;color:#1E6B5E;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase">Nguyên tắc cốt lõi</div>
-            <p style="font-family:Outfit,sans-serif;font-size:clamp(22px,3vw,30px);line-height:1.35;font-weight:600;color:#2A2D5C;margin:14px 0 0;text-wrap:pretty">Hỏi đúng nhu cầu — Tư vấn đúng sản phẩm — Báo giá rõ ràng — Theo sát khách — Chốt đúng thông tin — Bàn giao đầy đủ — Chăm sóc đến khi hoàn thành dịch vụ.</p>
+            <div class="pr-chips"><div class="pr-chip"><span>01</span>Hỏi đúng nhu cầu</div><div class="pr-chip"><span>02</span>Tư vấn đúng sản phẩm</div><div class="pr-chip"><span>03</span>Báo giá rõ ràng</div><div class="pr-chip"><span>04</span>Theo sát khách</div><div class="pr-chip"><span>05</span>Chốt đúng thông tin</div><div class="pr-chip"><span>06</span>Bàn giao đầy đủ</div><div class="pr-chip"><span>07</span>Chăm sóc đến khi hoàn tất</div></div>
             <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;padding-top:22px;border-top:1px solid #EEF0F5">
               <div style="flex:1 1 150px">
-                <div style="font-family:Outfit,sans-serif;font-size:22px;font-weight:600;color:#2A2D5C">10–30</div>
+                <div style="font-family:Outfit,sans-serif;font-size:22px;font-weight:600;color:#2A2D5C">📥 10–30</div>
                 <div style="font-size:13px;color:#6B7080;margin-top:2px">lead/ngày, tùy lượng khách thực tế</div>
               </div>
               <div style="flex:1 1 150px">
-                <div style="font-family:Outfit,sans-serif;font-size:22px;font-weight:700;color:#1E6B5E">05 phút</div>
+                <div style="font-family:Outfit,sans-serif;font-size:22px;font-weight:700;color:#1E6B5E">⏱ 05 phút</div>
                 <div style="font-size:13px;color:#6B7080;margin-top:2px">thời gian phản hồi tối đa cho lead mới</div>
               </div>
               <div style="flex:1 1 150px">
-                <div style="font-family:Outfit,sans-serif;font-size:22px;font-weight:600;color:#2A2D5C">30%</div>
+                <div style="font-family:Outfit,sans-serif;font-size:22px;font-weight:600;color:#2A2D5C">💰 30%</div>
                 <div style="font-size:13px;color:#6B7080;margin-top:2px">tiền cọc để booking được tính là đã chốt</div>
               </div>
               <div style="flex:1 1 150px">
-                <div style="font-family:Outfit,sans-serif;font-size:22px;font-weight:600;color:#2A2D5C">7 ngày</div>
+                <div style="font-family:Outfit,sans-serif;font-size:22px;font-weight:600;color:#2A2D5C">📅 7 ngày</div>
                 <div style="font-size:13px;color:#6B7080;margin-top:2px">lộ trình training trước khi làm độc lập</div>
               </div>
             </div>
@@ -1396,6 +1397,7 @@ Vấn đề cần hỗ trợ:</pre>
           </div>
         </div>
         <div style="font-size:12px;color:#3D6A62;margin-top:8px;line-height:1.45">{{ quizTotalLabel }}</div>
+      <button sc-camel-on-click="{{ goLotrinh }}" style="margin-top:10px;border:1px solid #4FB3A6;background:#fff;color:#1E6B5E;border-radius:10px;padding:10px 14px;font-family:Outfit,sans-serif;font-size:13.5px;font-weight:600;cursor:pointer;min-height:40px;width:100%">🧭 Tiếp tục lộ trình training</button>
       </section>
 
       <section style="background:#fff;border:1px solid #E6E8EF;border-radius:14px;padding:clamp(12px,2.5vw,15px)">
@@ -1481,6 +1483,16 @@ Vấn đề cần hỗ trợ:</pre>
 
 <style>
 .rules-ol li::marker{color:#4FB3A6;font-weight:700}
+.qa-btn{display:flex;align-items:center;gap:12px;text-align:left;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:13px 15px;cursor:pointer;min-height:64px;transition:background .15s,border-color .15s}
+.qa-btn:hover{background:rgba(255,255,255,.14);border-color:rgba(127,216,201,.5)}
+.qa-ico{font-size:22px;flex:0 0 auto}
+.qa-txt{display:flex;flex-direction:column;gap:2px}
+.qa-txt b{color:#fff;font-family:Outfit,sans-serif;font-size:14.5px;font-weight:600}
+.qa-txt small{color:#A9AECB;font-size:11.5px;line-height:1.4}
+.qa-btn kbd{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:5px;padding:1px 5px;font-size:10.5px;font-family:ui-monospace,monospace;color:#E6E8F5}
+.pr-chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:8px;margin-top:14px}
+.pr-chip{display:flex;align-items:center;gap:10px;background:#F5F6FA;border:1px solid #E6E8EF;border-radius:10px;padding:10px 13px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;color:#2A2D5C}
+.pr-chip span{flex:0 0 auto;font-size:11px;font-weight:700;color:#4FB3A6;background:#EAF7F4;border-radius:6px;padding:3px 7px;letter-spacing:.04em}
 .tourgall{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .tourfig{margin:0;position:relative;border:1px solid #E6E8EF;border-radius:12px;overflow:hidden;background:#fff;cursor:zoom-in}
 .tourfig img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover;transition:transform .25s}
@@ -1890,6 +1902,9 @@ class Component extends DCLogic {
       tabLead: this.tab('lead'), tabBooking: this.tab('booking'), tabCare: this.tab('care'),
       tabScript: this.tab('script'), tabGia: this.tab('gia'), tabCamnang: this.tab('camnang'), tabKpi: this.tab('kpi'),
       goHome: () => this.setState({ tab: 'home' }), goLotrinh: () => this.setState({ tab: 'lotrinh' }),
+      quickScripts: () => { this.setState({ tab: 'script' }); setTimeout(function () { var el = document.querySelector('input[placeholder^="Tìm theo"]'); if (el) el.focus(); }, 60); },
+      quickGiaVe: () => this.setState({ tab: 'gia', sub: 've' }),
+      quickCalc: () => this.setState({ tab: 'gia', sub: 'calc' }),
       goQuytrinh: () => this.setState({ tab: 'quytrinh' }), goLead: () => this.setState({ tab: 'lead' }),
       goBooking: () => this.setState({ tab: 'booking' }), goCare: () => this.setState({ tab: 'care' }),
       goScript: () => this.setState({ tab: 'script' }), goGia: () => this.setState({ tab: 'gia' }),
