@@ -993,14 +993,7 @@ Vấn đề cần hỗ trợ:</pre>
             <section style="background:#fff;border:1px solid #E6E8EF;border-radius:16px;padding:clamp(16px,4vw,24px)">
               <h3 style="font-family:Outfit,sans-serif;font-size:17px;font-weight:600;color:#2A2D5C;margin:0 0 6px">Tour du thuyền 3 đảo</h3>
               <p style="font-size:14px;color:#6B7080;margin:0 0 18px">Tài liệu hình ảnh để gửi khách khi tư vấn tour.</p>
-              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px">
-                <img src="assets/9817c281-d65d-4611-be90-c5f61c8f80ce.jpg" alt="Du thuyền Nautilus" sc-camel-on-click="{{ zoomImg }}" style="width:100%;display:block;border:1px solid #E6E8EF;border-radius:12px;cursor:zoom-in">
-                <img src="assets/9a031319-b993-4a7d-9e9b-cff36bd4faad.jpg" alt="Tour đảo" sc-camel-on-click="{{ zoomImg }}" style="width:100%;display:block;border:1px solid #E6E8EF;border-radius:12px;cursor:zoom-in">
-                <img src="assets/17697274-300b-4ae7-8e19-fd1eb4b40a74.jpg" alt="Hải trình hoàng hôn" sc-camel-on-click="{{ zoomImg }}" style="width:100%;display:block;border:1px solid #E6E8EF;border-radius:12px;cursor:zoom-in">
-                <img src="assets/1e63a518-f3cc-4681-b034-94632c2314f9.jpg" alt="Thể thao biển" sc-camel-on-click="{{ zoomImg }}" style="width:100%;display:block;border:1px solid #E6E8EF;border-radius:12px;cursor:zoom-in">
-                <img src="assets/05d7d623-8e49-4ef2-99b7-ae4f388c9d4e.jpg" alt="Đi bộ dưới biển" sc-camel-on-click="{{ zoomImg }}" style="width:100%;display:block;border:1px solid #E6E8EF;border-radius:12px;cursor:zoom-in">
-                <img src="assets/1a25a21d-0011-49fa-9c68-da0cf7771d35.jpg" alt="Tour check-in" sc-camel-on-click="{{ zoomImg }}" style="width:100%;display:block;border:1px solid #E6E8EF;border-radius:12px;cursor:zoom-in">
-              </div>
+              <div class="tourgall"><figure class="tourfig tourfig--hero"><img class="tourimg" src="assets/9817c281-d65d-4611-be90-c5f61c8f80ce.jpg" alt="Du thuyền Nautilus" data-cap="Du thuyền Nautilus — Tàu du thuyền chính của hành trình 3 đảo"><figcaption><b>Du thuyền Nautilus</b><span>Tàu du thuyền chính của hành trình 3 đảo</span></figcaption></figure><figure class="tourfig"><img class="tourimg" src="assets/9a031319-b993-4a7d-9e9b-cff36bd4faad.jpg" alt="Tour đảo" data-cap="Tour đảo — Ghé thăm và tắm biển tại các đảo"><figcaption><b>Tour đảo</b><span>Ghé thăm và tắm biển tại các đảo</span></figcaption></figure><figure class="tourfig"><img class="tourimg" src="assets/17697274-300b-4ae7-8e19-fd1eb4b40a74.jpg" alt="Hải trình hoàng hôn" data-cap="Hải trình hoàng hôn — Chuyến ngắm hoàng hôn trên biển"><figcaption><b>Hải trình hoàng hôn</b><span>Chuyến ngắm hoàng hôn trên biển</span></figcaption></figure><figure class="tourfig"><img class="tourimg" src="assets/1e63a518-f3cc-4681-b034-94632c2314f9.jpg" alt="Thể thao biển" data-cap="Thể thao biển — Trải nghiệm thể thao dưới nước"><figcaption><b>Thể thao biển</b><span>Trải nghiệm thể thao dưới nước</span></figcaption></figure><figure class="tourfig"><img class="tourimg" src="assets/05d7d623-8e49-4ef2-99b7-ae4f388c9d4e.jpg" alt="Đi bộ dưới biển" data-cap="Đi bộ dưới biển — Đi bộ trên đáy biển, ngắm san hô"><figcaption><b>Đi bộ dưới biển</b><span>Đi bộ trên đáy biển, ngắm san hô</span></figcaption></figure><figure class="tourfig"><img class="tourimg" src="assets/1a25a21d-0011-49fa-9c68-da0cf7771d35.jpg" alt="Tour check-in" data-cap="Tour check-in — Hành trình check-in các điểm đẹp"><figcaption><b>Tour check-in</b><span>Hành trình check-in các điểm đẹp</span></figcaption></figure></div>
             </section>
           </sc-if>
 
@@ -1428,6 +1421,40 @@ Vấn đề cần hỗ trợ:</pre>
 </div>
 
 </x-dc>
+<div id="tlightbox" aria-hidden="true">
+  <button id="tlb-close" aria-label="Đóng" title="Đóng (Esc)">×</button>
+  <button id="tlb-prev" aria-label="Ảnh trước" title="Trước (←)">‹</button>
+  <img id="tlb-img" alt="Ảnh tour phóng to">
+  <div id="tlb-cap"></div>
+  <button id="tlb-next" aria-label="Ảnh sau" title="Sau (→)">›</button>
+</div>
+<script>
+(function(){
+  var box = document.getElementById('tlightbox');
+  if (!box) return;
+  var im = document.getElementById('tlb-img');
+  var cap = document.getElementById('tlb-cap');
+  var list = [], idx = 0;
+  function refresh(){ var els = document.querySelectorAll('.tourimg'); list = []; for (var i=0;i<els.length;i++) list.push({src: els[i].src, cap: els[i].getAttribute('data-cap')||els[i].alt||''}); }
+  function show(i){ if(!list.length) refresh(); if(!list.length) return; idx = (i + list.length) % list.length; im.src = list[idx].src; cap.textContent = list[idx].cap + ' (' + (idx+1) + '/' + list.length + ')'; box.classList.add('show'); box.setAttribute('aria-hidden','false'); }
+  function hide(){ box.classList.remove('show'); box.setAttribute('aria-hidden','true'); }
+  document.addEventListener('click', function(e){
+    var t = e.target && e.target.closest ? e.target.closest('.tourimg') : null;
+    if (t) { refresh(); var els = document.querySelectorAll('.tourimg'); for (var i=0;i<els.length;i++) if (els[i]===t) { show(i); break; } }
+  });
+  document.getElementById('tlb-close').addEventListener('click', hide);
+  document.getElementById('tlb-prev').addEventListener('click', function(){ show(idx-1); });
+  document.getElementById('tlb-next').addEventListener('click', function(){ show(idx+1); });
+  box.addEventListener('click', function(e){ if (e.target === box) hide(); });
+  document.addEventListener('keydown', function(e){
+    if (!box.classList.contains('show')) return;
+    if (e.key === 'Escape') hide();
+    else if (e.key === 'ArrowLeft') show(idx-1);
+    else if (e.key === 'ArrowRight') show(idx+1);
+  });
+})();
+</script>
+
 <script>
 (function(){
   var cur = null;
@@ -1454,6 +1481,27 @@ Vấn đề cần hỗ trợ:</pre>
 
 <style>
 .rules-ol li::marker{color:#4FB3A6;font-weight:700}
+.tourgall{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.tourfig{margin:0;position:relative;border:1px solid #E6E8EF;border-radius:12px;overflow:hidden;background:#fff;cursor:zoom-in}
+.tourfig img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover;transition:transform .25s}
+.tourfig:hover img{transform:scale(1.04)}
+.tourfig figcaption{position:absolute;left:0;right:0;bottom:0;padding:24px 12px 10px;background:linear-gradient(transparent,rgba(21,23,56,.85));display:flex;flex-direction:column;gap:1px;text-align:left}
+.tourfig figcaption b{color:#fff;font-size:13.5px;font-weight:600}
+.tourfig figcaption span{color:#C9CDE6;font-size:11.5px;line-height:1.4}
+.tourfig--hero{grid-column:span 2;grid-row:span 2}
+.tourfig--hero img{aspect-ratio:auto;height:100%}
+.tourfig--hero figcaption b{font-size:15px}
+@media(max-width:640px){.tourgall{grid-template-columns:repeat(2,1fr)}.tourfig--hero{grid-column:span 2;grid-row:auto}.tourfig--hero img{aspect-ratio:16/10;height:auto}}
+#tlightbox{position:fixed;inset:0;z-index:200;background:rgba(15,16,38,.92);display:none;align-items:center;justify-content:center;flex-direction:column;padding:20px}
+#tlightbox.show{display:flex}
+#tlightbox img{max-width:92vw;max-height:78vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+#tlb-cap{color:#E6E8F5;font-size:14px;margin-top:12px;text-align:center;font-family:'Be Vietnam Pro',sans-serif}
+#tlightbox button{position:absolute;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:50%;width:44px;height:44px;font-size:22px;cursor:pointer;line-height:1}
+#tlightbox button:hover{background:rgba(255,255,255,.22)}
+#tlb-close{top:16px;right:16px}
+#tlb-prev{left:16px;top:50%;transform:translateY(-50%)}
+#tlb-next{right:16px;top:50%;transform:translateY(-50%)}
+@media(max-width:640px){#tlb-prev{left:8px}#tlb-next{right:8px}}
 .navbtn{transition:background .15s,color .15s}
 .navbtn:hover{background:rgba(255,255,255,.14) !important}
 .navbtn[style*="color:#2A2D5C"]{font-weight:600}
