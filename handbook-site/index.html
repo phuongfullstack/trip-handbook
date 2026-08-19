@@ -226,7 +226,7 @@ window.__resources = {"scriptsJson":"data:application/json;base64,eyJjYXRlZ29yaW
       </div>
     </div>
 
-    <div style="position:sticky;top:0;z-index:60;background:#2A2D5C;box-shadow:0 10px 26px rgba(21,23,56,.45);max-width:1280px;margin:0 auto;display:flex;gap:3px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#5A5F92 transparent">
+    <div class="navtabs" style="position:sticky;top:0;z-index:60;background:#2A2D5C;box-shadow:0 10px 26px rgba(21,23,56,.45);max-width:1280px;margin:0 auto;display:flex;gap:3px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#5A5F92 transparent">
       <button sc-camel-on-click="{{ goHome }}" style="background:{{ tabHome.bg }};color:{{ tabHome.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">Tổng quan</button>
       <button sc-camel-on-click="{{ goLotrinh }}" style="background:{{ tabLotrinh.bg }};color:{{ tabLotrinh.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">Lộ trình 7 ngày</button>
       <button sc-camel-on-click="{{ goQuytrinh }}" style="background:{{ tabQuytrinh.bg }};color:{{ tabQuytrinh.fg }};border:0;border-radius:10px 10px 0 0;padding:11px 11px;font-family:Outfit,sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex:0 0 auto">Quy trình</button>
@@ -256,7 +256,7 @@ window.__resources = {"scriptsJson":"data:application/json;base64,eyJjYXRlZ29yaW
                 <div style="font-size:13px;color:#6B7080;margin-top:2px">lead/ngày, tùy lượng khách thực tế</div>
               </div>
               <div style="flex:1 1 150px">
-                <div style="font-family:Outfit,sans-serif;font-size:22px;font-weight:600;color:#2A2D5C">05 phút</div>
+                <div style="font-family:Outfit,sans-serif;font-size:22px;font-weight:700;color:#1E6B5E">05 phút</div>
                 <div style="font-size:13px;color:#6B7080;margin-top:2px">thời gian phản hồi tối đa cho lead mới</div>
               </div>
               <div style="flex:1 1 150px">
@@ -813,14 +813,14 @@ Vấn đề cần hỗ trợ:</pre>
 
           <div style="font-size:13px;color:#6B7080;padding:0 4px">{{ scriptCountLabel }}</div>
 
-          <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;flex-direction:column;gap:14px">
             <sc-for list="{{ scriptList }}" as="s" hint-placeholder-count="6">
-              <section style="background:#fff;border:1px solid #E6E8EF;border-radius:14px;padding:clamp(16px,4vw,20px)">
+              <section style="background:#fff;border:1px solid #E6E8EF;border-radius:14px;padding:clamp(18px,4vw,24px)">
                 <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap">
                   <div style="flex:1 1 260px;min-width:0">
                     <div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:7px">
                       <span style="font-family:Outfit,sans-serif;font-size:11.5px;font-weight:600;color:#4FB3A6;letter-spacing:0.04em">{{ s.code }}</span>
-                      <span style="font-size:11px;color:#8A90A6;background:#F2F3F8;border-radius:999px;padding:3px 9px">{{ s.cat }}</span>
+                      <span style="font-size:11px;color:#6B7080;background:#F2F3F8;border-radius:999px;padding:3px 9px">{{ s.cat }}</span>
                     </div>
                     <div style="font-family:Outfit,sans-serif;font-size:16px;font-weight:600;color:#2A2D5C;line-height:1.4">{{ s.sit }}</div>
                     <div style="font-size:13px;color:#6B7080;margin-top:3px">Dùng khi: {{ s.when }}</div>
@@ -859,20 +859,20 @@ Vấn đề cần hỗ trợ:</pre>
                       <div style="border:1px solid #E6E8EF;border-radius:11px;padding:14px 16px">
                         <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap">
                           <div style="flex:1 1 240px;min-width:0">
-                            <div style="font-size:11px;color:#8A90A6;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:4px">{{ r.group }}</div>
+                            <div style="font-size:11px;color:#6B7080;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:4px">{{ r.group }}</div>
                             <div style="font-size:14.5px;font-weight:500;color:#2C2F3A;line-height:1.5;white-space:pre-line">{{ r.name }}</div>
                           </div>
                           <div style="display:flex;gap:18px;flex-wrap:wrap">
                             <div>
-                              <div style="font-size:11px;color:#8A90A6">Người lớn</div>
+                              <div style="font-size:11px;color:#6B7080">Người lớn</div>
                               <div style="font-family:Outfit,sans-serif;font-size:16px;font-weight:600;color:#2A2D5C">{{ r.adultF }}</div>
                             </div>
                             <div>
-                              <div style="font-size:11px;color:#8A90A6">Trẻ em</div>
+                              <div style="font-size:11px;color:#6B7080">Trẻ em</div>
                               <div style="font-family:Outfit,sans-serif;font-size:16px;font-weight:600;color:#2A2D5C">{{ r.childF }}</div>
                             </div>
                             <div>
-                              <div style="font-size:11px;color:#8A90A6">Cao tuổi</div>
+                              <div style="font-size:11px;color:#6B7080">Cao tuổi</div>
                               <div style="font-family:Outfit,sans-serif;font-size:16px;font-weight:600;color:#2A2D5C">{{ r.seniorF }}</div>
                             </div>
                           </div>
@@ -1096,8 +1096,14 @@ Vấn đề cần hỗ trợ:</pre>
       <!-- ══ CẨM NANG NGHIỆP VỤ ══ -->
       <sc-if value="{{ isCamnang }}" hint-placeholder-val="{{ true }}">
         <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="background:#fff;border:1px solid #E6E8EF;border-radius:14px;padding:10px 14px;display:flex;flex-wrap:wrap;gap:7px;align-items:center">
+              <span style="font-size:11.5px;font-weight:600;color:#6B7080;letter-spacing:.05em;text-transform:uppercase;margin-right:2px">Nhảy tới</span>
+              <sc-for list="{{ cmChips }}" as="c" hint-placeholder-count="8">
+                <button class="cm-chip" sc-camel-on-click="{{ c.onClick }}">{{ c.label }}</button>
+              </sc-for>
+            </div>
           <section style="background:#fff;border:1px solid #E6E8EF;border-radius:16px;padding:clamp(13px,3vw,18px)">
-            <h2 style="font-family:Outfit,sans-serif;font-size:18px;font-weight:600;color:#2A2D5C;margin:0 0 2px">Cẩm nang nghiệp vụ sale</h2>
+            <h2 id="cm-khuvuc" style="font-family:Outfit,sans-serif;font-size:18px;font-weight:600;color:#2A2D5C;margin:0 0 2px">Cẩm nang nghiệp vụ sale</h2>
             <p style="margin:0;color:#6B7080;font-size:14px">Từ điển thuật ngữ, kiến thức sản phẩm Phú Quốc, thư viện option, bảng giá tour trọn gói và FAQ — tổng hợp từ tài liệu training nội bộ. Số liệu chỉ để tham khảo: luôn kiểm tra bảng giá mới nhất trước khi báo khách.</p>
 
             <h3 style="font-family:Outfit,sans-serif;font-size:14px;font-weight:600;color:#2A2D5C;margin:14px 0 7px">Khu vực Phú Quốc — chọn chỗ ở trước, xếp lịch trình sau</h3>
@@ -1112,7 +1118,7 @@ Vấn đề cần hỗ trợ:</pre>
           </section>
 
           <section style="background:#fff;border:1px solid #E6E8EF;border-radius:16px;padding:clamp(13px,3vw,18px)">
-            <h2 style="font-family:Outfit,sans-serif;font-size:18px;font-weight:600;color:#2A2D5C;margin:0 0 2px">Từ điển thuật ngữ</h2>
+            <h2 id="cm-thuatngu" style="font-family:Outfit,sans-serif;font-size:18px;font-weight:600;color:#2A2D5C;margin:0 0 2px">Từ điển thuật ngữ</h2>
             <h3 style="font-family:Outfit,sans-serif;font-size:14px;font-weight:600;color:#2A2D5C;margin:14px 0 7px">Thuật ngữ khách sạn</h3>
             <table style="width:100%;border-collapse:collapse;font-size:12.5px">
               <tr><th style="text-align:left;padding:5px 8px;background:#F5F6FA;color:#2A2D5C;font-weight:600;border-bottom:1px solid #E6E8EF;vertical-align:top">Thuật ngữ</th><th style="text-align:left;padding:5px 8px;background:#F5F6FA;color:#2A2D5C;font-weight:600;border-bottom:1px solid #E6E8EF;vertical-align:top">Nghĩa và cách dùng</th></tr>
@@ -1161,7 +1167,7 @@ Vấn đề cần hỗ trợ:</pre>
           </section>
 
           <section style="background:#fff;border:1px solid #E6E8EF;border-radius:16px;padding:clamp(13px,3vw,18px)">
-            <h2 style="font-family:Outfit,sans-serif;font-size:18px;font-weight:600;color:#2A2D5C;margin:0 0 2px">Thư viện option ghép combo (11 option)</h2>
+            <h2 id="cm-option" style="font-family:Outfit,sans-serif;font-size:18px;font-weight:600;color:#2A2D5C;margin:0 0 2px">Thư viện option ghép combo (11 option)</h2>
             <p style="margin:0 0 6px;color:#6B7080;font-size:12.5px">Mỗi ngày trong combo chỉ chọn 01 chương trình full-day. Sale nắm tối thiểu 02 option cho từng vị trí bán chính: cáp treo – công viên nước, show diễn – ẩm thực đêm.</p>
             <div style="overflow-x:auto">
             <table style="width:100%;border-collapse:collapse;font-size:12.5px;min-width:700px">
@@ -1193,7 +1199,7 @@ Vấn đề cần hỗ trợ:</pre>
           </section>
 
           <section style="background:#fff;border:1px solid #E6E8EF;border-radius:16px;padding:clamp(13px,3vw,18px)">
-            <h2 style="font-family:Outfit,sans-serif;font-size:18px;font-weight:600;color:#2A2D5C;margin:0 0 2px">Bảng giá tour trọn gói (tham khảo)</h2>
+            <h2 id="cm-giatour" style="font-family:Outfit,sans-serif;font-size:18px;font-weight:600;color:#2A2D5C;margin:0 0 2px">Bảng giá tour trọn gói (tham khảo)</h2>
             <p style="margin:0 0 6px;color:#6B7080;font-size:12.5px">Giá trọn gói đã gồm vé máy bay, khách sạn 4–5 sao, ăn theo chương trình, xe và hướng dẫn viên. Số liệu tham khảo — giá thay đổi theo mùa, tình trạng chỗ và thời điểm đặt; giá cuối được xác nhận khi chốt tour.</p>
 
             <h3 style="font-family:Outfit,sans-serif;font-size:14px;font-weight:600;color:#2A2D5C;margin:14px 0 7px">Tour 3N2Đ</h3>
@@ -1231,7 +1237,7 @@ Vấn đề cần hỗ trợ:</pre>
           </section>
 
           <section style="background:#fff;border:1px solid #E6E8EF;border-radius:16px;padding:clamp(13px,3vw,18px)">
-            <h2 style="font-family:Outfit,sans-serif;font-size:18px;font-weight:600;color:#2A2D5C;margin:0 0 2px">Địa điểm nổi bật Phú Quốc</h2>
+            <h2 id="cm-diadiem" style="font-family:Outfit,sans-serif;font-size:18px;font-weight:600;color:#2A2D5C;margin:0 0 2px">Địa điểm nổi bật Phú Quốc</h2>
             <table style="width:100%;border-collapse:collapse;font-size:12.5px">
               <tr><th style="text-align:left;padding:5px 8px;background:#F5F6FA;color:#2A2D5C;font-weight:600;border-bottom:1px solid #E6E8EF;vertical-align:top">Địa điểm</th><th style="text-align:left;padding:5px 8px;background:#F5F6FA;color:#2A2D5C;font-weight:600;border-bottom:1px solid #E6E8EF;vertical-align:top">Nổi bật với</th></tr>
               <tr><td style="padding:5px 8px;border-bottom:1px solid #EEF0F5;color:#3A3E4C;vertical-align:top;line-height:1.45;font-weight:600;color:#2A2D5C;white-space:nowrap">Bãi Sao</td><td style="padding:5px 8px;border-bottom:1px solid #EEF0F5;color:#3A3E4C;vertical-align:top;line-height:1.45">Biển đẹp nhất Nam đảo, bãi cát trắng mịn.</td></tr>
@@ -1249,7 +1255,7 @@ Vấn đề cần hỗ trợ:</pre>
           </section>
 
           <section style="background:#fff;border:1px solid #E6E8EF;border-radius:16px;padding:clamp(13px,3vw,18px)">
-            <h2 style="font-family:Outfit,sans-serif;font-size:18px;font-weight:600;color:#2A2D5C;margin:0 0 2px">Xử lý phản hồi tiêu cực — 6 bước</h2>
+            <h2 id="cm-xuly" style="font-family:Outfit,sans-serif;font-size:18px;font-weight:600;color:#2A2D5C;margin:0 0 2px">Xử lý phản hồi tiêu cực — 6 bước</h2>
             <p style="margin:0 0 6px;color:#6B7080;font-size:12.5px">Ví dụ mẫu: khách phàn nàn phòng bẩn. Phản hồi khách trong 15 phút, xử lý dứt điểm trong 24h.</p>
             <table style="width:100%;border-collapse:collapse;font-size:12.5px">
               <tr><th style="text-align:left;padding:5px 8px;background:#F5F6FA;color:#2A2D5C;font-weight:600;border-bottom:1px solid #E6E8EF;vertical-align:top">Bước</th><th style="text-align:left;padding:5px 8px;background:#F5F6FA;color:#2A2D5C;font-weight:600;border-bottom:1px solid #E6E8EF;vertical-align:top">Việc làm</th></tr>
@@ -1263,7 +1269,7 @@ Vấn đề cần hỗ trợ:</pre>
           </section>
 
           <section style="background:#fff;border:1px solid #E6E8EF;border-radius:16px;padding:clamp(13px,3vw,18px)">
-            <h2 style="font-family:Outfit,sans-serif;font-size:18px;font-weight:600;color:#2A2D5C;margin:0 0 2px">Câu hỏi thường gặp (FAQ)</h2>
+            <h2 id="cm-faq" style="font-family:Outfit,sans-serif;font-size:18px;font-weight:600;color:#2A2D5C;margin:0 0 2px">Câu hỏi thường gặp (FAQ)</h2>
             <table style="width:100%;border-collapse:collapse;font-size:12.5px">
               <tr><th style="text-align:left;padding:5px 8px;background:#F5F6FA;color:#2A2D5C;font-weight:600;border-bottom:1px solid #E6E8EF;vertical-align:top">Khách hỏi</th><th style="text-align:left;padding:5px 8px;background:#F5F6FA;color:#2A2D5C;font-weight:600;border-bottom:1px solid #E6E8EF;vertical-align:top">Trả lời</th></tr>
               <tr><td style="padding:5px 8px;border-bottom:1px solid #EEF0F5;color:#3A3E4C;vertical-align:top;line-height:1.45;font-weight:600;color:#2A2D5C;white-space:nowrap">Tour có gồm vé máy bay không?</td><td style="padding:5px 8px;border-bottom:1px solid #EEF0F5;color:#3A3E4C;vertical-align:top;line-height:1.45">Có, giá trọn gói gồm vé máy bay khứ hồi, khách sạn, ăn theo chương trình, xe đưa đón và HDV.</td></tr>
@@ -1283,7 +1289,7 @@ Vấn đề cần hỗ trợ:</pre>
           </section>
 
           <section style="background:#fff;border:1px solid #E6E8EF;border-radius:16px;padding:clamp(13px,3vw,18px)">
-            <h2 style="font-family:Outfit,sans-serif;font-size:18px;font-weight:600;color:#2A2D5C;margin:0 0 2px">Thu nhập &amp; quy chế hoa hồng (giai đoạn đầu)</h2>
+            <h2 id="cm-thunhap" style="font-family:Outfit,sans-serif;font-size:18px;font-weight:600;color:#2A2D5C;margin:0 0 2px">Thu nhập &amp; quy chế hoa hồng (giai đoạn đầu)</h2>
             <p style="margin:0 0 6px;color:#6B7080;font-size:12.5px">Tổng thu nhập = Lương cứng 4.000.000đ + Hoa hồng Tour + Hoa hồng ELYDAY. Doanh thu Tour và ELYDAY cộng gộp khi xét target.</p>
 
             <h3 style="font-family:Outfit,sans-serif;font-size:14px;font-weight:600;color:#2A2D5C;margin:14px 0 7px">Target doanh thu theo tháng</h3>
@@ -1398,7 +1404,7 @@ Vấn đề cần hỗ trợ:</pre>
       </section>
 
       <section style="background:#fff;border:1px solid #E6E8EF;border-radius:14px;padding:clamp(12px,2.5vw,15px)">
-        <div style="font-family:Outfit,sans-serif;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#8A90A6;margin-bottom:8px">Nhắc nhanh</div>
+        <div style="font-family:Outfit,sans-serif;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#6B7080;margin-bottom:8px">Nhắc nhanh</div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));align-items:start;gap:7px">
           <div style="display:flex;gap:6px;align-items:baseline">
             <span style="color:#4FB3A6;font-weight:700;flex:0 0 auto">·</span>
@@ -1420,8 +1426,41 @@ Vấn đề cần hỗ trợ:</pre>
 </div>
 
 </x-dc>
+<script>
+(function(){
+  var cur = null;
+  function bind() {
+    var n = document.querySelector('.navtabs');
+    if (!n || n === cur) return;
+    if (cur) cur.classList.remove('navtabs--l', 'navtabs--r');
+    cur = n;
+    function upd() {
+      var max = n.scrollWidth - n.clientWidth;
+      n.classList.toggle('navtabs--l', n.scrollLeft > 4);
+      n.classList.toggle('navtabs--r', n.scrollLeft < max - 4);
+    }
+    if (n.__upd) n.removeEventListener('scroll', n.__upd);
+    n.__upd = upd;
+    n.addEventListener('scroll', upd, { passive: true });
+    upd();
+  }
+  bind();
+  setTimeout(bind, 400); setTimeout(bind, 1200);
+  try { new MutationObserver(function(){ bind(); }).observe(document.body, { childList: true, subtree: true }); } catch (e) {}
+})();
+</script>
+
 <style>
 .rules-ol li::marker{color:#4FB3A6;font-weight:700}
+.navtabs::before,.navtabs::after{content:"";position:absolute;top:0;bottom:0;width:16px;z-index:3;pointer-events:none;opacity:0;transition:opacity .25s}
+.navtabs::before{left:0;background:linear-gradient(90deg,#2A2D5C,rgba(42,45,92,0))}
+.navtabs::after{right:0;background:linear-gradient(270deg,#2A2D5C,rgba(42,45,92,0))}
+.navtabs.navtabs--l::before{opacity:1}
+.navtabs.navtabs--r::after{opacity:1}
+[id^="cm-"]{scroll-margin-top:64px}
+html{scroll-behavior:smooth}
+.cm-chip{border:1px solid #D9DCE6;background:#fff;color:#3A3E4C;border-radius:10px;padding:8px 13px;font-family:'Be Vietnam Pro',sans-serif;font-size:13px;font-weight:500;display:inline-block;min-height:36px;line-height:19px;cursor:pointer}
+.cm-chip:hover{border-color:#4FB3A6;color:#1E6B5E}
 #backtop{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border-radius:50%;border:0;background:#2A2D5C;color:#fff;font-size:20px;line-height:1;cursor:pointer;z-index:80;opacity:0;pointer-events:none;transition:opacity .25s;box-shadow:0 8px 22px rgba(21,23,56,.4)}
 #backtop.show{opacity:1;pointer-events:auto}
 #backtop:hover{background:#4FB3A6}
@@ -1507,6 +1546,18 @@ const CHECKLIST = [
 const BOOKING_FORM = 'NEW BOOKING\nFanpage\n+ Tên khách:\nSđt:\n+ Check in:\n+ Check out:\n+ N of G:\n+ N of Room:\n+ Rate:\n+ Service:\n+ Total:\n+ Dep:\n+ Remain:';
 const REPORT_FORM = 'BÁO CÁO SALES NGÀY …/…/…\nLead mới:\nĐã tư vấn:\nĐã báo giá:\nĐang cân nhắc:\nChờ cọc:\nBooking đã chốt:\nDoanh thu đã chốt:\nTiền cọc đã nhận:\nKhách cần chăm sóc lại:\nVấn đề cần hỗ trợ:';
 const LS = 'elyday-training-v1';
+const CM_CHIPS = [
+  ['cm-khuvuc', 'Khu vực Phú Quốc'],
+  ['cm-thuatngu', 'Thuật ngữ'],
+  ['cm-option', '11 Option'],
+  ['cm-giatour', 'Giá tour trọn gói'],
+  ['cm-diadiem', 'Địa điểm'],
+  ['cm-xuly', 'Xử lý phản hồi'],
+  ['cm-faq', 'FAQ'],
+  ['cm-thunhap', 'Thu nhập & hoa hồng']
+].map(function (x) {
+  return { label: x[1], onClick: function () { var el = document.getElementById(x[0]); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } };
+});
 const ROOM_COPY = ["Hillside Apartment — Studio City View (28m², 2 người lớn): Ngày thường 940.000đ/đêm · Cuối tuần 1.130.000đ/đêm (mùa thấp điểm)","Hillside Apartment — Studio Ocean View (28m², 2 người lớn): Ngày thường 1.230.000đ/đêm · Cuối tuần 1.480.000đ/đêm (mùa thấp điểm)","Hillside Apartment — 1 Bedroom City View (45m², 2NL + 2TE<12t): Ngày thường 1.440.000đ/đêm · Cuối tuần 1.650.000đ/đêm (mùa thấp điểm)","Hillside Apartment — 1 Bedroom Ocean View (45m², 2NL + 2TE<12t): Ngày thường 1.570.000đ/đêm · Cuối tuần 1.790.000đ/đêm (mùa thấp điểm)","Hillside Apartment — 2 Bedroom City View (80m², 4NL + 1TE<12t): Ngày thường 2.360.000đ/đêm · Cuối tuần 2.610.000đ/đêm (mùa thấp điểm)","Hillside Apartment — 2 Bedroom Ocean View (80m², 4NL + 1TE<12t): Ngày thường 2.610.000đ/đêm · Cuối tuần 2.860.000đ/đêm (mùa thấp điểm)","Hillside Apartment — 3 Bedroom City View (95m², 6NL + 1TE<12t): Ngày thường 3.150.000đ/đêm · Cuối tuần 3.450.000đ/đêm (mùa thấp điểm)","Hillside Apartment — 3 Bedroom Ocean View (95m², 6NL + 1TE<12t): Ngày thường 3.450.000đ/đêm · Cuối tuần 3.750.000đ/đêm (mùa thấp điểm)","ELYDAY CASA — Classic Queen (16m², 2 khách): Ngày thường 630.000đ/đêm · Cuối tuần 690.000đ/đêm (Mùa Thường May–Oct, đã gồm thuế & phí, chưa gồm ăn sáng)","ELYDAY CASA — Superior Queen (20m², 2 khách): Ngày thường 680.000đ/đêm · Cuối tuần 940.000đ/đêm (Mùa Thường May–Oct, đã gồm thuế & phí, chưa gồm ăn sáng)","ELYDAY CASA — Deluxe Queen (20m², 2 khách + 1 trẻ<12t): Ngày thường 680.000đ/đêm · Cuối tuần 940.000đ/đêm (Mùa Thường May–Oct, đã gồm thuế & phí, chưa gồm ăn sáng)","ELYDAY CASA — Family Deluxe (28m², 2NL + 2TE<12t): Ngày thường 1.100.000đ/đêm · Cuối tuần 1.350.000đ/đêm (Mùa Thường May–Oct, đã gồm thuế & phí, chưa gồm ăn sáng)","ELYDAY CASA — Suite Homey 1BR (28m², 2 khách + 2TE<12t): Ngày thường 1.660.000đ/đêm · Cuối tuần 1.780.000đ/đêm (Mùa Thường May–Oct, đã gồm thuế & phí, chưa gồm ăn sáng)","ELYDAY CASA — Suite Casa 1BR with Bathtub (16m², 2 khách): Ngày thường 1.900.000đ/đêm · Cuối tuần 2.020.000đ/đêm (Mùa Thường May–Oct, đã gồm thuế & phí, chưa gồm ăn sáng)"];
 
 
@@ -1811,6 +1862,7 @@ class Component extends DCLogic {
       isSubVe: st.sub === 've', isSubCombo: st.sub === 'combo', isSubPhong: st.sub === 'phong',
       isSubTour: st.sub === 'tour', isSubCalc: st.sub === 'calc',
       ticketGroups, ticketOptions, comboChips, combo,
+      cmChips: CM_CHIPS,
 
       calcTicket: String(c.ticket), calcAdult: c.adult, calcChild: c.child, calcSenior: c.senior,
       calcRoom: grp(c.room), calcOther: grp(c.other),
